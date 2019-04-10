@@ -1,0 +1,8 @@
+
+#!user/bin/env ruby 
+
+
+require_relative "../lib/enviroment.rb" 
+
+Scraper.new.scrape_page
+
