@@ -2,7 +2,7 @@
 #!user/bin/env ruby 
 
 
-require_relative "../lib/enviroment.rb" 
+require_relative "../lib/enviroment" 
 
 Scraper.new.scrape_page
 
