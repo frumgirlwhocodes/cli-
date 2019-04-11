@@ -5,7 +5,7 @@ require "pry"
 
 
 require_relative "./cli/version"
-require_relitive "./cli/library"
+require_relative "./cli/library"
 require_relative "./cli/scraper"
 require_relative "./cli/command_line"
 
