@@ -5,10 +5,10 @@ attr_accessor :name, :location, :telephone
 
 @@all 
 
-def initialize
-@@all < self 
-
-end 
+def initialize(library_hash)
+    library_hash.each {|key, value| self.send(("#{key}="), value)}
+    @@all << self
+  end
 
 def self.all 
   @@all 

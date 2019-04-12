@@ -4,5 +4,5 @@
 
 require_relative "../lib/enviroment" 
 
-Scraper.new.get_page
+Scraper.new.scrape_page
 
