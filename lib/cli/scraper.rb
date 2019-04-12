@@ -8,18 +8,19 @@ end
  def scrape_page 
    library_array=[]
   get_page.css("table#libraries tr").each do |lib|
-    
     hash={} 
-    hash[:city]=
-    hash[:name]=
-   hash[:address]=
-   hash[:zip]=
-  hash[:phone]=
-    binding.pry 
+    hash[:city]= lib.children[0].text unless lib.css("td").empty?
+    hash[:name]= lib.children[1].text unless lib.css("td").empty?
+   hash[:address]= lib.children[2].text unless lib.css("td").empty?
+   hash[:zip]= lib.children[3].text unless lib.css("td").empty?
+  hash[:phone]= lib.children[4].text unless lib.css("td").empty?
   end 
   library_array << hash 
  end 
 end 
-# hash[:address]=#lib.css("tr")[1].children[2].text
-   # hash[:zip]=#lib.css("tr")[1].children[3].text
-  # hash[:phone]=#lib.css("tr")[1].children[4].text
+
+
+def create_libraries
+scrape_page.each do |lib_h| 
+  Library.new(lib_h)
+end 
