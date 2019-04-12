@@ -1,7 +1,7 @@
 class Library
   
   
-attr_accessor :name, :location, :telephone 
+attr_accessor :name,:city, :location, :zip,  :phone
 
 @@all 
 
