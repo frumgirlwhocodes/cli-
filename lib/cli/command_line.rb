@@ -1,6 +1,6 @@
 class CommandLineInterface
 
-  def call 
+ def call 
     input=" "
     puts "Welcome to the library finder!"
     puts "I would love to help you find the library you are looking for"
@@ -8,11 +8,12 @@ class CommandLineInterface
     while input != "exit"
       input=gets.strip
       case input 
-      when "list libraries "
+      when "list libraries"
         list_libraries 
-  end 
-  def list_libraries 
-    Libary.all. 
-    
-  end 
+end 
+end 
+end 
+  
+  #def list_libraries 
+#  end 
 end 

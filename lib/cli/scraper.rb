@@ -7,10 +7,12 @@ class Scraper
 end 
  def scrape_page 
    students_array=[]
-  get_page.css("table#libraries tbody tr").each 
-    
-    hash={}
+  get_page.css("table#libraries tbody tr").each do |lib|
     binding.pry 
+  end 
+    
+    
  end 
+ 
 
 end 
