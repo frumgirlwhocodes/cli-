@@ -14,15 +14,15 @@ end
    hash[:address]= lib.children[2].text unless lib.css("td").empty?
    hash[:zip]= lib.children[3].text unless lib.css("td").empty?
   hash[:phone]= lib.children[4].text unless lib.css("td").empty?
-  binding.pry
-  end 
   library_array << hash 
 end 
+library_array
 end 
 
 
 def create_libraries
 scrape_page.each do |lib_h| 
   Library.new(lib_h)
+end 
 end 
 end 
