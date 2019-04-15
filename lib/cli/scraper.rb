@@ -17,6 +17,7 @@ end
   library_array << hash 
 end 
 library_array
+binding.pry
 end 
 
 
