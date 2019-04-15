@@ -1,6 +1,7 @@
 class CommandLineInterface
 
  def call 
+   Scraper.new.create_libraries
     input=" "
     puts "Welcome to the library finder!"
     puts "I would love to help you find the library you are looking for and any other information you may need"
@@ -40,6 +41,7 @@ def list_by_city
     if library.city == input 
       new_array << library 
     end  
+  end 
     libraries=new_array.sort_by {|library| library.name} 
     libraries.each_with_index do |library, index|
     puts "#{index + 1}.#{library.name} - #{library.city}"
@@ -53,10 +55,11 @@ def get_location
   if library.name == input 
     array << library 
   end 
+end
   libraries=array.sort_by{ |library| library.name} 
   libraries.each_with_index do |library, index| 
     puts "#{index + 1}. #{library.name} - #{library.location}"
   end 
 end 
-  
+
 end 

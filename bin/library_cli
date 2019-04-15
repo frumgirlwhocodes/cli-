@@ -4,5 +4,7 @@
 
 require_relative "../lib/enviroment" 
 
-CommandLineInterface.new.
+#Scraper.new.scrape_page
+
+CommandLineInterface.new.call 
 
