@@ -7,10 +7,10 @@ class CommandLineInterface
     puts "To list all the libraries, enter 'list libraries'"
     puts "To list all the libraries by a certian city, enter 'list by city'"
     puts "To get the location of a library, enter 'get location' "
-    puts "To get the zip code of a library, enter 'get zip code'"
+    puts "To get the libraries based on a zipcode, enter 'list by zipcode'"
     puts "To get the phone number of a library, enter 'get phone number'"
     while input != "exit"
-      input=gets.strip
+      input=gets.strip 
       case input 
       when "list libraries"
         list_libraries 
@@ -33,7 +33,7 @@ end
   end 
 end 
 def list_by_city 
-  puts "please enter the name of an city:" 
+  puts "Please enter the name of an city:" 
   input=get.chomp 
   new_array=[]
   Library.all do |library| 
@@ -45,4 +45,9 @@ def list_by_city
     puts "#{index + 1}.#{library.name} - #{library.city}"
   end 
 end 
+def get_location  
+  puts "Please enter the name of a library:"
+  
+  
+  
 end 
