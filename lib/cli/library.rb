@@ -12,6 +12,9 @@ def initialize(library_hash)
  def self.create_from_collection(library_array)
    library_array.each { |library| self.new(library)}
  end
+ def self.find_by_name(name)
+    self.all.detect{|library| library.name == name}
+  end
 
 def self.all 
   @@all 
