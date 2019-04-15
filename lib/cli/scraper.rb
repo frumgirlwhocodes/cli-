@@ -22,8 +22,8 @@ end
 
 
 def create_libraries
-scrape_page.each do |lib_h| 
-  Library.new(lib_h)
+scrape_page.each do |library_hash| 
+  Library.new(library_hash)
 end 
 end 
 end 

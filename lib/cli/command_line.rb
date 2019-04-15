@@ -34,20 +34,29 @@ end
 end 
 def list_by_city 
   puts "Please enter the name of an city:" 
-  input=get.chomp 
+  input=gets.chomp 
   new_array=[]
   Library.all do |library| 
     if library.city == input 
       new_array << library 
     end  
     libraries=new_array.sort_by {|library| library.name} 
-    libraries.each_with_index |library, index|
+    libraries.each_with_index do |library, index|
     puts "#{index + 1}.#{library.name} - #{library.city}"
   end 
 end 
 def get_location  
   puts "Please enter the name of a library:"
-  
-  
+  input= gets.chomp 
+  array=[]
+  Library.all.each do |library| 
+  if library.name == input 
+    array << library 
+  end 
+  libraries=array.sort_by{ |library| library.name} 
+  libraries.each_with_index do |library, index| 
+    puts "#{index + 1}. #{library.name} - #{library.location}"
+  end 
+end 
   
 end 
