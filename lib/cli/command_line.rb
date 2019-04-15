@@ -40,12 +40,11 @@ def list_by_city
   Library.all do |library| 
     if library.city == input 
       new_array << library 
-    else 
-      puts "no library for this city"
-    end  
+    end 
+    new_array
   end 
-    #libraries=new_array.sort_by {|library| library.name} 
-    Library.all.each_with_index do |library, index|
+    #libraries=list_by_city.sort_by {|library| library.name} 
+   new_array.each_with_index do |library, index|
     puts "#{index + 1}.#{library.name} - #{library.city}"
   end 
 end 
@@ -60,7 +59,7 @@ def get_location
 end
   libraries=array.sort_by{ |library| library.name} 
   libraries.each_with_index do |library, index| 
-    puts "#{index + 1}. #{library.name} - #{library.location}"
+    puts "#{index + 1}. #{library.name} - #{library.address}"
   end 
 end 
 
