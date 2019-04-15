@@ -28,39 +28,33 @@ end
 end 
   
   def list_libraries
- libraries = Library.all.sort_by! {|library| library.name}
-    libraries.each_with_index do |library, index| 
+  Library.all.each_with_index do |library, index| 
     puts "#{index + 1 }. #{library.city}, #{library.name}, #{library.address}, #{library.zip}, #{library.phone}"
   end 
 end 
 def list_by_city 
   puts "Please enter the name of an city:" 
-  input=gets.chomp 
+  input=gets.strip  
   new_array=[]
   Library.all do |library| 
     if library.city == input 
       new_array << library 
+       new_array
     end 
-    new_array
   end 
     #libraries=list_by_city.sort_by {|library| library.name} 
-   new_array.each_with_index do |library, index|
+  list_by_city.each_with_index do |library, index|
     puts "#{index + 1}.#{library.name} - #{library.city}"
   end 
 end 
 def get_location  
   puts "Please enter the name of a library:"
-  input= gets.chomp 
-  array=[]
-  Library.all.each do |library| 
-  if library.name == input 
-    array << library 
+  input= gets.strip 
+  if library = Library.find_by_name(input)
+      Library.all.sort {|x, y| x.name <=> y.name}.each_with_index do |song, index|
+      puts "#{index += 1}. #{library.name} - #{library.address}"
+    end
   end 
-end
-  libraries=array.sort_by{ |library| library.name} 
-  libraries.each_with_index do |library, index| 
-    puts "#{index + 1}. #{library.name} - #{library.address}"
-  end 
+end 
 end 
 
-end 
