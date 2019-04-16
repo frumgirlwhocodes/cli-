@@ -2,59 +2,23 @@ class CommandLineInterface
 
  def call 
    Scraper.new.create_libraries
-    input=" "
     puts "Welcome to the library finder!"
     puts "I would love to help you find the library you are looking for and any other information you may need"
-    puts "To list all the libraries, enter 'list libraries'"
-    puts "To list all the libraries by a certian city, enter 'list by city'"
-    puts "To get the location of a library, enter 'get location' "
-    puts "To get the libraries based on a zipcode, enter 'list by zipcode'"
-    puts "To get the phone number of a library, enter 'get phone number'"
-    while input != "exit"
-      input=gets.strip 
-      case input 
-      when "list libraries"
-        list_libraries 
-    when "list by city"
-      list_by_city
-  when "get location"
-     get_location 
-  when "get zipcode"
-   get_zipcode
-   when "get phone number"
-     get_phone_number 
-end 
-end 
-end 
+    puts "Here is a list of all the libraries"
+    start 
+  end 
+   def start 
+     list_libraries
+     puts ""
+    puts "What number library would you like to see?"
+    
+    end
+  
+
   
   def list_libraries
-  Library.all.each_with_index do |library, index| 
-    puts "#{index + 1 }. #{library.city}, #{library.name}, #{library.address}, #{library.zip}, #{library.phone}"
-  end 
-end 
-def list_by_city 
-  puts "Please enter the name of an city:" 
-  input=gets.strip  
-  new_array=[]
-  Library.all do |library| 
-    if library.city == input 
-      new_array << library 
-       new_array
-    end 
-  end 
-    #libraries=list_by_city.sort_by {|library| library.name} 
-  list_by_city.each_with_index do |library, index|
-    puts "#{index + 1}.#{library.name} - #{library.city}"
-  end 
-end 
-def get_location  
-  puts "Please enter the name of a library:"
-  input= gets.strip 
-  if library = Library.find_by_name(input)
-      Library.all.sort {|x, y| x.name <=> y.name}.each_with_index do |song, index|
-      puts "#{index += 1}. #{library.name} - #{library.address}"
-    end
-  end 
+    Library.all.each.with_index(1) do |library, index|
+    puts "#{index}. #{library.name} "
+  end
 end 
 end 
-
