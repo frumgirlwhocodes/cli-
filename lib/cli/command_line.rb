@@ -10,15 +10,42 @@ class CommandLineInterface
    def start 
      list_libraries
      puts ""
-    puts "What number library would you like to see?"
+    puts "What number library would you like to see more information on?"
     
-    end
-  
+    more_info
+    
+  puts ""
+    puts "Would you like to see another restaurant? Enter Y or N"
 
-  
-  def list_libraries
-    Library.all.each.with_index(1) do |library, index|
+    input = gets.strip.downcase
+    if input == "y"
+      start
+    elsif input == "n"
+      puts ""
+      puts "Thank you! Have a great day!"
+      exit
+    else
+      puts ""
+      puts "I don't understand that answer."
+      start
+    end
+  end
+    
+    
+     def more_info
+     input = gets.strip
+      libraries = Library.all.sort_by {|library| library.name}
+    libraries.each.with_index(1) do |library, index|
+      if index  == input.to_i
+        puts " The city, address, zipcode and telephone number for this library is: #{library.city}, #{library.address}, #{library.zip}, #{library.phone} "
+     end    
+    end 
+   
+    def list_libraries
+    libraries= Library.all.sort_by { |library| library.name}
+    libraries.each.with_index(1) do |library, index|
     puts "#{index}. #{library.name} "
   end
+end 
 end 
 end 
