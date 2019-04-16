@@ -42,8 +42,8 @@ class CommandLineInterface
     end 
    
     def list_libraries
-    libraries= Library.all.sort_by { |library| library.name}
-    libraries.each.with_index(1) do |library, index|
+    #libraries= Library.all.sort_by { |library| library.name}
+    Libary.all.each.with_index(1) do |library, index|
     puts "#{index}. #{library.name} "
   end
 end 
