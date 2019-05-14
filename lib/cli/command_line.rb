@@ -32,7 +32,8 @@ class CommandLineInterface
     end
   end
    def list
-    #libraries= Library.all.sort_by { |library| library.name}
+    
+   # libraries= Library.all.sort { |a, b| a.name <=> b.name}
     Library.all.each.with_index(1) do |library, index|
     puts "#{index}. #{library.name} "
   end
@@ -48,3 +49,8 @@ end
      end    
     end 
 end 
+
+
+
+
+

@@ -10,12 +10,12 @@ Gem::Specification.new do |spec|
   spec.email         = ["'liebahinda@gmail.com'"]
 
   spec.summary       = %q{library_cli}
-<<<<<<< HEAD
+
   spec.description   = %q{library_cli}
-=======
+
   spec.description   = %q{library_cli.}
->>>>>>> 6409198ba85afa69627731fdcd22d4c1979df88f
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+
+  spec.homepage      = "https://github.com/frumgirlwhocodes/cli-"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
@@ -42,4 +42,5 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 2.0"
   spec.add_development_dependency "rake", "~> 10.0"
+  spec.add_development_dependency "pry"
 end
