@@ -1,7 +1,7 @@
 #require "cli/version"
 require "nokogiri"
 require "open-uri"
-require "pry"
+#require "pry"
 
 
 require_relative "./cli/version"
